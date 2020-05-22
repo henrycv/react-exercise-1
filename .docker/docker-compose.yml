@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  react-skeleton-v1-prod:
+    image: react-skeleton-v1-img
+    container_name: react-skeleton-v1-cont
+    build:
+      context: ../
+      dockerfile: .docker/Dockerfile
+    ports:
+      - "8080:80"

@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  react-skeleton-v1-srv:
+    # Workaround to create-react-app bug: https://github.com/facebook/create-react-app/issues/8688#issuecomment-627325545
+    stdin_open: true
+
+    # The following lines were commented due to the unknow error on DEV build
+    # container_name: react-skeleton-v1-cont
+    # image: react-skeleton-v1-img
+
+    build:
+      context: ../
+      dockerfile: .docker/Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - ../:/app:delegated
